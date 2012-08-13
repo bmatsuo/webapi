@@ -19,10 +19,11 @@ import (
 // See http://gorilla-web.appspot.com/pkg/context
 var Context = context.DefaultContext
 
-type handler struct{ Interface }
-
 // An http.Handler sets Params(r) before the api's handler is called.
 func Handler(api Interface) http.Handler { return handler{api} }
+
+type handler struct{ Interface }
+
 func (h handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	p, err := h.Params(r)
 	if err != nil {
@@ -39,13 +40,14 @@ func (h handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.Interface.ServeHTTP(w, r)
 }
 
-// An interface for http API endpoints.
+// An interface for web server API endpoints.
 type Interface interface {
 	http.Handler
 	ParamsParser
 }
 
-// Create an object that implements Interface.
+// Create an object that implements Interface. This should only be used if
+// implementing Interface is not an option.
 func New(pfn ParamsFunc, h http.Handler) Interface {
 	return &webAPI{pfn, h}
 }

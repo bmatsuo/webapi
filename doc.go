@@ -9,7 +9,7 @@
  */
 
 /*
-Package webapi is a tooling for building web server APIs. It provides an
+Package webapi is a toolkit for building web server APIs. It provides an
 interface for different types of APIs. For an example API implementation see
 github.com/bmatsuo/webapi/jsonapi.
 
