@@ -8,16 +8,6 @@
  *  Description: api parameter error
  */
 
-/*
-Errors
-
-Fatal errors encountered during WebAPI.Params parsing should be returned as an
-Error. Errors are used to create an *http.Response instead of calling
-Interface.ServeHTTP.
-
-Errors are implemented as an interface. This allows errors to marshal response
-data in a convenient way.
-*/
 package webapi
 
 type Error interface {
