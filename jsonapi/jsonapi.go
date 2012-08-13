@@ -30,6 +30,14 @@ var InvalidError = webapi.NewError(
 	Header,
 	[]byte(`{"error":"invalid_json"}`))
 
+// Sets Headers in w.
+func SetHeader(w http.ResponseWriter) {
+	h := w.Header()
+	for k, v := range Header {
+		h.Set(k, v)
+	}
+}
+
 // An implementation of webapi.Interface
 type JsonAPI struct {
 	ctor    func() interface{}

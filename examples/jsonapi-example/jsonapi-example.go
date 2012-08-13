@@ -28,18 +28,14 @@ import (
 func greeting(w http.ResponseWriter, r *http.Request) {
 	params := webapi.Params(r)
 	name := params["name"].(string)
-	for k, v := range jsonapi.Header {
-		w.Header().Set(k, v)
-	}
+	jsonapi.SetHeader(w)
 	p, _ := json.Marshal(map[string]string{"result": "hello, " + name + "!"})
 	w.Write(p)
 }
 
 func add(w http.ResponseWriter, r *http.Request) {
 	params := webapi.Params(r)["json"].(*struct{ X, Y int })
-	for k, v := range jsonapi.Header {
-		w.Header().Set(k, v)
-	}
+	jsonapi.SetHeader(w)
 	p, _ := json.Marshal(map[string]int{"result": params.X + params.Y})
 	w.Write(p)
 }
