@@ -1,11 +1,10 @@
-
 [install go]: http://golang.org/install.html "Install Go"
-[the godoc url]: http://localhost:6060/pkg/github.com/bmatsuo/webapi/ "the Godoc URL"
+[the gopkgdoc url]: http://gopkgdoc.appspot.com/pkg/github.com/bmatsuo/webapi/ "the GoPkgDoc URL"
 
 About webapi
 =============
 
-webapi is the best program for...
+Package webapi is a toolkit for building HTTP API's.
 
 Documentation
 =============
@@ -15,10 +14,17 @@ Prerequisites
 
 [Install Go][].
 
+    go get code.google.com/p/gorilla/context
+
 Installation
 -------------
 
     go get github.com/bmatsuo/webapi
+
+Examples
+--------
+
+Look in the `examples/` directory.
 
 General Documentation
 ---------------------
@@ -27,11 +33,7 @@ Use `go doc` to vew the documentation for webapi
 
     go doc github.com/bmatsuo/webapi
 
-Or alternatively, use a godoc http server
-
-    godoc -http=:6060
-
-and visit [the Godoc URL][]
+or visit [the GoPkgDoc URL][].
 
 
 Author
