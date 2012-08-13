@@ -4,7 +4,7 @@
 About webapi
 =============
 
-Package webapi is a toolkit for building HTTP API's.
+Package webapi is a toolkit for building web server APIs.
 
 Documentation
 =============
