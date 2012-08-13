@@ -8,7 +8,7 @@
  *  Description: a json webapi implementation
  */
 
- /*
+/*
 Package jsonapi provides a JSON iplementation of webapi.Interface.
- */
- package jsonapi
+*/
+package jsonapi
