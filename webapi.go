@@ -8,6 +8,7 @@
  *  Description: Main source file in webapi
  */
 
+// Package webapi is a tooling for building web server APIs
 package webapi
 
 import (
