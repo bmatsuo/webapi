@@ -36,7 +36,7 @@ func (h handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	setParams(r, p)
-	defer deleteParams(r)
+	defer Context.Clear(r)
 	h.Interface.ServeHTTP(w, r)
 }
 

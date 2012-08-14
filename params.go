@@ -21,7 +21,6 @@ var ContextKey = "webapi:params"
 type P map[string]interface{}
 
 func setParams(r *http.Request, p P) { Context.Set(r, ContextKey, p) }
-func deleteParams(r *http.Request)   { Context.Delete(r, ContextKey) }
 
 // Retrieve the parameter map for a request.
 func Params(r *http.Request) P {
